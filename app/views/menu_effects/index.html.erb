@@ -1,0 +1,52 @@
+
+<nav id="dr-menu" class="dr-menu">
+    <div class="dr-trigger"><span class="dr-icon dr-icon-menu"></span><a class="dr-label">Oh Hi There!</a></div>
+    <ul>
+        <li><a class="dr-icon dr-icon-user" href="http://localhost:3000/circle_navs">Circular Navigation</a></li>
+        <li><a class="dr-icon dr-icon-camera" href="http://localhost:3000/custom_inputs">Custom Inputs</a></li>
+        <li><a class="dr-icon dr-icon-heart" href="http://localhost:3000/typographies">Typographies</a></li>
+        <li><a class="dr-icon dr-icon-bullhorn" href="http://localhost:3000/tilted_slideshows">Tilted Slideshows</a></li>
+        <li><a class="dr-icon dr-icon-download" href="#">Screen Sliders</a></li>
+        <li><a class="dr-icon dr-icon-settings" href="#">TBD</a></li>
+        <li><a class="dr-icon dr-icon-switch" href="#">THE END</a></li>
+    </ul>
+</nav>
+
+<% content_for 'extra_footer' do %>
+<script>
+      var YTMenu = (function() {
+
+  function init() {
+    
+    [].slice.call( document.querySelectorAll( '.dr-menu' ) ).forEach( function( el, i ) {
+
+      var trigger = el.querySelector( 'div.dr-trigger' ),
+        icon = trigger.querySelector( 'span.dr-icon-menu' ),
+        open = false;
+
+      trigger.addEventListener( 'click', function( event ) {
+        if( !open ) {
+          el.className += ' dr-menu-open';
+          open = true;
+        }
+      }, false );
+
+      icon.addEventListener( 'click', function( event ) {
+        if( open ) {
+          event.stopPropagation();
+          open = false;
+          el.className = el.className.replace(/\bdr-menu-open\b/,'');
+          return false;
+        }
+      }, false );
+
+    } );
+
+  }
+
+  init();
+
+})();
+
+      </script>
+  <% end %>

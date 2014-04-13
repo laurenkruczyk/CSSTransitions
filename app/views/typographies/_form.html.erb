@@ -1,0 +1,17 @@
+<%= form_for(@typography) do |f| %>
+  <% if @typography.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@typography.errors.count, "error") %> prohibited this typography from being saved:</h2>
+
+      <ul>
+      <% @typography.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,17 @@
+<%= form_for(@menu_effect) do |f| %>
+  <% if @menu_effect.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@menu_effect.errors.count, "error") %> prohibited this menu_effect from being saved:</h2>
+
+      <ul>
+      <% @menu_effect.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,17 @@
+<%= form_for(@circle_nav) do |f| %>
+  <% if @circle_nav.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@circle_nav.errors.count, "error") %> prohibited this circle_nav from being saved:</h2>
+
+      <ul>
+      <% @circle_nav.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
